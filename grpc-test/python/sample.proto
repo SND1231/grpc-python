@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package sample;
+
+message HelloMessage{
+  string name = 1;
+  int32 num1 = 2;
+  int32 num2 = 3;
+}
+
+message ReplyMessage{
+  string reply_msg = 1;
+}
+
+service SampleService{
+  rpc HelloServer (stream HelloMessage) returns (stream ReplyMessage) {}
+}
+
